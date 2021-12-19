@@ -17,3 +17,9 @@ pygmentsUseClasses = true
     name = 'link'
     url = 'link'
 ```
+## How to install
+1. On your website's root directory, run `git submodule add https://github.com/jaredtconnor/piovoso`
+2. In your `config.toml`, change the theme property to `theme = "piovoso"`
+
+## How to add items in nav
+Paste this to your `config.toml` and adjust accordingly.
