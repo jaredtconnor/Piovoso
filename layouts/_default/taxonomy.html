@@ -1,18 +1,21 @@
+{{/*
+vim: ft=gohtmltmpl
+*/}}
 {{ define "main" }}
-<h1 class="label"><span style="color: #555; font-weight: 400">tag:</span> {{ .Title }} </h1>
-<ul class="post-list">
-	{{ range .Paginator.Pages }}
-	<li class="post-listing">
-		<article class="article">
-			<p>
-				<a class="article-title" href="{{ .Permalink }}">
-					<span class="article-date"> {{ .Date.Format "Jan '06"}} </span>
-					{{ .Title }}
-				</a>
-				</a>
-		</article>
-	</li>
-	{{ end }}
-	{{ template "_internal/pagination.html" . }}
-</ul>
+	<h1 class="label"><span style="color: #555; font-weight: 400">tag:</span> {{ .Title }} </h1>
+	<ul class="post-list">
+		{{ range .Paginator.Pages }}
+			<li class="post-listing">
+				<article class="article">
+					<p>
+						<a class="article-title" href="{{ .Permalink }}">
+							<span class="article-date"> {{ .Date.Format "Jan '06"}} </span>
+							{{ .Title }}
+						</a>
+					</a>
+				</article>
+			</li>
+		{{ end }}
+		{{ template "_internal/pagination.html" . }}
+	</ul>
 {{ end }}
