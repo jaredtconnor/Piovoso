@@ -1,0 +1,13 @@
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Piovoso"
+license = "MIT"
+licenselink = "https://github.com/jaredtconnor//master/LICENSE"
+description = "Clean and minimal blog hugo theme"
+tags = ["blog", "light"]
+features = ["blog", "responsive"]
+min_version = "0.55.2"
+
+[author]
+  name = "Jared Connor"
+  homepage = "https://github.com/jaredtconnor"
