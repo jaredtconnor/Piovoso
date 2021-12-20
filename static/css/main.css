@@ -348,12 +348,6 @@ textarea {
   max-height: 40em;
 }
 
-/*
-I don't think there is almost ever a scenario when you want columns to be flex
-if and only if it's smaller. Working with that assumption, `columns
-is-desktop` defines that you want it to only begin being a columns after the
-desktop breakpoint.
-*/
 .columns {
   display: flex;
   flex-wrap: wrap;
@@ -562,7 +556,7 @@ desktop breakpoint.
 }
 @media only screen and (min-width: 900px) {
   .container {
-    width: 600px;
+    width: 1000px;
   }
 }
 .container.max-width-big {

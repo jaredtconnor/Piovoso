@@ -1,7 +1,7 @@
 <div class="side">
 	<a href={{ "/" | absURL }} class="side-title"> {{ .Site.Title }} </a>
 	<ul class="side-nav">
-		{{ range .Site.Menus.navigation }}
+		{{ range .Site.Menus.main }}
 			<li class="side-item"> <a href="{{ .URL | absURL }}"> {{ .Name }} </a> </li>
 		{{ end }}
 	</ul>

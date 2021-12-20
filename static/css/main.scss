@@ -3,11 +3,11 @@ $subtitle-size: 1.25rem;
 $breakpoint-gap: 32px;
 
 $breakpoints:   (
-	"big": 900px,
+	"big": 1200px,
 );
 
 $container-override: (
-	"big": 600px,
+	"big": 900px,
 );
 
 @import "briefscss/briefs.scss";
