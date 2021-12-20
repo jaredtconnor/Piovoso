@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  {{- partial "head.html" . -}}
-  <body>
-		{{- partial "side.html" . -}}
-    <div class="container max-width-tablet">
-      {{- block "main" . -}}{{- end -}}
-    </div>
-		{{- block "rest" . -}}{{- end -}}
-  </body>
+{{ partial "header.html" . }}
+
+<body>
+  {{ partial "nav.html" . }}
+  <div id="main-block" class="container max-width-tablet">
+    {{ block "main" . }}
+
+    {{ end }}
+  </div>
+    {{ block "footer" . }}
+
+    {{ end }}
+</body>
+
 </html>
