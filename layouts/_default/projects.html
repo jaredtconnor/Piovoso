@@ -1,0 +1,19 @@
+{{ define "main" }}
+	<h1 class="title"> {{ .Title }} </h1>
+	<ul class="project-list">
+		{{ range where .Site.RegularPages "Section" "project"}}
+			<li class="project-listing">
+				<article class="project">
+					<p>
+						<a class="project-title" href="{{ .Permalink }}">
+							{{ .Title }}
+						</a>
+                    </p>
+                    <p class="project-description">
+                        {{ .Description }}
+                    </p>
+				</article>
+			</li>
+		{{ end }}
+	</ul>
+{{ end }}

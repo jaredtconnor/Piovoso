@@ -987,3 +987,23 @@ a.article-title {
   margin-top: 1rem;
   font-size: 0.75rem;
 }
+
+.project-listing { 
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+a.project-title {
+  color: inherit;
+}
+
+.article-header {
+  margin-bottom: 2rem;
+}
+
+.article img {
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
