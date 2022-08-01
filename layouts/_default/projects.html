@@ -1,18 +1,21 @@
 {{ define "main" }}
-	<h1 class="title"> {{ .Title }} </h1>
+	<h1 class="title"> {{ .Title }} </h1>  
 	<ul class="project-list">
-		{{ range where .Site.RegularPages "Section" "project"}}
-			<li class="project-listing">
+		{{ range (where .Site.RegularPages "Section" "project").ByDate.Reverse }} 
+			<li class="project-listing"> 
 				<article class="project">
 					<p>
 						<a class="project-title" href="{{ .Permalink }}">
-							{{ .Title }}
+              {{ .Title }}
 						</a>
                     </p>
                     <p class="project-description">
                         {{ .Description }}
                     </p>
-				</article>
+            <p class="project-date"> 
+              {{ .Date.Format "January 2006" }} 
+            </p>				
+        </article>
 			</li>
 		{{ end }}
 	</ul>

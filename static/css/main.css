@@ -998,8 +998,13 @@ a.article-title {
 }
 
 a.project-title {
-  color: inherit;
+  color: inherit; 
 }
+
+.project-date {
+  color: inherit;   
+  font-size: 0.75rem;
+} 
 
 .article-header {
   margin-bottom: 2rem;
