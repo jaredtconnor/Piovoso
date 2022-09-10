@@ -916,6 +916,18 @@ pre {
 
 .side-nav {
   margin-top: 0.5rem;
+} 
+
+.social-icons {  
+  display: flex;  
+  align-items: center;
+  color: inherit;  
+  padding: 0.5rem;
+} 
+
+.side .social-icons .social-icon {  
+  align-items: center; 
+  padding: 0.5rem;  
 }
 
 @media only screen and (max-width: 900px) {
