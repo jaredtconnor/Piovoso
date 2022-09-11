@@ -911,24 +911,23 @@ pre {
 
 .side-item {
   list-style-type: none;
-  margin-left: none;
+  margin-left: 0;
 }
 
 .side-nav {
   margin-top: 0.5rem;
 } 
 
-.social-icons {  
-  display: flex;  
-  align-items: center;
-  color: inherit;  
-  padding: 0.5rem;
+.social-icons { 
+  margin-top: 1rem; 
+  margin-bottom: 1rem;
 } 
 
-.side .social-icons .social-icon {  
-  align-items: center; 
-  padding: 0.5rem;  
+.social-icon { 
+  margin-left: 0.1rem !important;
+  margin-right: 0.1rem !important;
 }
+
 
 @media only screen and (max-width: 900px) {
   body {
@@ -945,8 +944,9 @@ pre {
     display: flex;
   }
 
-  .side-item + .side-item {
-    margin-left: 1rem;
+
+  .side-item { 
+    margin-right: 0.5rem; 
   }
 
   .hide-mobile {
