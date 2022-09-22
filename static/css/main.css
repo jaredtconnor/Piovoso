@@ -892,7 +892,7 @@ pre {
 .side {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 10rem;
+  width: 15rem;
   padding: 0 2rem;
 }
 
