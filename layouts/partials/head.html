@@ -1,23 +1,27 @@
 <head>
-	<title> {{.Title}} </title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="{{ .Description }}">
-	{{ if .Site.Params.author }}
-		<meta name="author" content="{{ .Site.Params.author}}" />
-	{{ end }} 
-	<script src="https://kit.fontawesome.com/45894e9e45.js" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700|IBM+Plex+Mono:400,700&display=swap" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="{{ "css/main.css" | absURL }}">
-	<link type="text/css" rel="stylesheet" href="{{ "css/syntax.css" | absURL }}">
+  <title> {{.Title}} </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ .Description }}">
+  {{ if .Site.Params.author }}
+  <meta name="author" content="{{ .Site.Params.author}}" />
+  {{ end }}
+  <script src="https://kit.fontawesome.com/45894e9e45.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700|IBM+Plex+Mono:400,700&display=swap"
+    rel="stylesheet">
 
-	<link rel="canonical" href="{{ .Permalink }}">
-	<link rel="icon" href="{{ $.Site.Params.favicon | absURL }}"/>
+  {{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+  {{ if .Site.IsServer }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+  {{ else }}
+  {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+  {{ end }}
+
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" href="{{ $.Site.Params.favicon | absURL }}" />
   {{ template "_internal/google_analytics.html" . }}
-  {{ template "_internal/google_analytics_async.html" . }} 
+  {{ template "_internal/google_analytics_async.html" . }}
 
-  <link rel="alternate"
-      type="application/rss+xml"
-      href="{{.Site.BaseURL }}/index.xml"
-      title="{{ .Site.Title }}">
+  <link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/index.xml" title="{{ .Site.Title }}">
 </head>
