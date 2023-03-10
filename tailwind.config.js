@@ -8,7 +8,12 @@ module.exports = {
     "./content/**/*.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      cursor: {
+        'fancy': 'url(hand.cur), pointer',
+
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

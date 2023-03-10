@@ -12,10 +12,10 @@
     </article>
   </li>
   {{ end }}
-  <div class="tags">
+  <div class="text-xs">
     <p> tags:
       {{range .Site.Taxonomies.tags}}
-      <a href="{{.Page.Permalink}}">{{.Page.Title}}</a>
+      <a class="text-sky-400/25" href="{{.Page.Permalink}}">{{.Page.Title}}</a>
       {{end}}
     </p>
   </div>
