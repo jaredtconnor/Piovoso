@@ -1,22 +1,24 @@
-<div class="font-serif -mx-4 md:w-[150px] md:flex-shrink-0  md:mx-0 md:px-0">
-  <div class="lg:sticky lg:top-10">
-    <div class="ml-2 mb-2 px-4 flex flex-col items-start">
+<div class="font-serif w-1/5 d:w-1/4 ml-2 md:flex-shrink-0 md:mx-0 md:px-0 overflow-hidden">
+  <div class="">
+    <div class="flex flex-col items-start mb-5 font-bold">
       <a href={{ "/" | absURL }} class=""> {{ .Site.Title }} </a>
     </div>
-    <nav class="flex flex-row md:flex-col items-start relative overflow-scroll fade">
-      <div class="flex flex-row md:flex-col space-x-0 pr-10 mb-2 mt-2 md:mt-0">
+    <nav class="flex flex-row md:flex-col">
+      <div class="flex flex-row md:flex-col ">
         {{ range .Site.Menus.main.ByWeight}}
         <a class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200" href="{{ .URL | absURL }}"> {{
           .Name }} </a>
         {{ end }}
       </div>
-      {{ range .Site.Menus.social.ByWeight}}
-      <a href="{{ .URL }}" class="social-icon" title="{{ .Name }}">
-        <span class="icon">
-          <i class="{{ .Pre }}"></i>
-        </span>
-      </a>
-      {{ end }}
+      <div class="flex flex-row mt-4">
+        {{ range .Site.Menus.social.ByWeight}}
+        <a href="{{ .URL }}" title="{{ .Name }}">
+          <span class="icon">
+            <i class="{{ .Pre }} m-1"></i>
+          </span>
+        </a>
+        {{ end }}
+      </div>
     </nav>
   </div>
 </div>
