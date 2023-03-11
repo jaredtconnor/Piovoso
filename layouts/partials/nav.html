@@ -1,14 +1,14 @@
 <div class="font-san w-1/5 d:w-1/4 ml-2 md:flex-shrink-0 md:mx-0 md:px-0 overflow-hidden">
   <div class="">
     <div class="flex flex-col items-start mb-5 font-bold">
-      <a href={{ "/" | absURL }} class="hover-bg"> {{ .Site.Title }} </a>
+      <a href={{ "/" | absURL }} class="hover-bg hover:text-slate-800"> {{ .Site.Title }} </a>
     </div>
     <nav class="flex flex-row md:flex-col">
       <div class="flex flex-row md:flex-col ">
         <ul class="list-none">
           {{ range .Site.Menus.main.ByWeight}}
           <li>
-            <a class="transition hover:bg-sky-200" href="{{ .URL | absURL }}">
+            <a class="transition hover:bg-sky-200 hover:text-slate-800" href="{{ .URL | absURL }}">
               {{.Name
               }} </a>
           </li>
@@ -18,7 +18,7 @@
       <div class="flex flex-row mt-4">
         {{ range .Site.Menus.social.ByWeight}}
         <a href="{{ .URL }}" title="{{ .Name }}">
-          <span class="icon transition hover:bg-sky-200">
+          <span class="icon transition hover:bg-sky-200 hover:text-slate-800">
             <i class="{{ .Pre }} m-1"></i>
           </span>
         </a>
