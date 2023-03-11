@@ -8,9 +8,9 @@
 @layer utilities { 
 
   .special-underline {
-    @apply bg-gradient-to-r from-yellow-200 to-green-800
+    @apply bg-gradient-to-r from-sky-400/25 to-sky-400/25
       bg-no-repeat [background-position:0_88%]
-      [background-size:100%_0.2em]
+      [background-size:100%_0.0em]
 
       motion-safe:transition-all motion-safe:duration-200
       hover:[background-size:100%_100%]
