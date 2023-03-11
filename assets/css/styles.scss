@@ -4,18 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
- 
-@layer utilities { 
 
-  .special-underline {
-    @apply bg-gradient-to-r from-sky-400/25 to-sky-400/25
-      bg-no-repeat [background-position:0_88%]
-      [background-size:100%_0.0em]
-
-      motion-safe:transition-all motion-safe:duration-200
-      hover:[background-size:100%_100%]
-      focus:[background-size:100%_100%];
+@layer utilities {    
+  .hover-bg {
+    background: 
+      linear-gradient(#bae6fd 0 0) no-repeat
+      calc(200% - var(--i,0)*100%) 100% / 200% calc(100%*var(--i,0) + .08em);
+    transition: .3s calc(var(--i,0)*.3s), background-position .3s calc(.3s - calc(var(--i,0)*.3s));
   }
-} 
-
-
+  .hover-bg:hover {
+    --i: 1;
+  }
+}

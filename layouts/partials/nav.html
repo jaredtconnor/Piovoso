@@ -1,22 +1,24 @@
-<div class="font-serif w-1/5 d:w-1/4 ml-2 md:flex-shrink-0 md:mx-0 md:px-0 overflow-hidden">
+<div class="font-san w-1/5 d:w-1/4 ml-2 md:flex-shrink-0 md:mx-0 md:px-0 overflow-hidden">
   <div class="">
-    <div class="flex flex-col items-start mb-5 font-bold animate-text bg-gradient-to-r from-teal-500">
-      <a href={{ "/" | absURL }} class=""> {{ .Site.Title }} </a>
+    <div class="flex flex-col items-start mb-5 font-bold">
+      <a href={{ "/" | absURL }} class="hover-bg"> {{ .Site.Title }} </a>
     </div>
     <nav class="flex flex-row md:flex-col">
       <div class="flex flex-row md:flex-col ">
-        {{ range .Site.Menus.main.ByWeight}}
-        <a class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 " href="{{ .URL | absURL }}">
-          {{.Name
-          }} </a>
-        <a class="special-underline" href="{{ .URL | absURL }}"> {{.Name
-          }} </a>
-        {{ end }}
+        <ul class="list-none">
+          {{ range .Site.Menus.main.ByWeight}}
+          <li>
+            <a class="transition hover:bg-sky-200" href="{{ .URL | absURL }}">
+              {{.Name
+              }} </a>
+          </li>
+          {{ end }}
+        </ul>
       </div>
       <div class="flex flex-row mt-4">
         {{ range .Site.Menus.social.ByWeight}}
         <a href="{{ .URL }}" title="{{ .Name }}">
-          <span class="icon">
+          <span class="icon transition hover:bg-sky-200">
             <i class="{{ .Pre }} m-1"></i>
           </span>
         </a>
