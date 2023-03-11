@@ -4,4 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+ 
+@layer utilities { 
+
+  .special-underline {
+    @apply bg-gradient-to-r from-yellow-200 to-green-800
+      bg-no-repeat [background-position:0_88%]
+      [background-size:100%_0.2em]
+
+      motion-safe:transition-all motion-safe:duration-200
+      hover:[background-size:100%_100%]
+      focus:[background-size:100%_100%];
+  }
+} 
+
 
