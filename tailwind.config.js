@@ -15,3 +15,19 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
   ]
 }
+
+typography: (theme) => {
+  return {
+    default: {
+      css: {
+        a: {
+          color: theme(`colors.blue.600`),
+          textDecoration: `none`,
+          "&:hover": {
+            textDecoration: `underline`,
+          },
+        },
+      },
+    },
+  }
+}
