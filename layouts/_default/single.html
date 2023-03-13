@@ -5,9 +5,6 @@
     <h1><a class="font-bold text-3xl transition hover:bg-sky-200 hover:text-slate-800" href="{{ .Permalink }}">{{ .Title
         }}</a></h1>
     <p class="my-2 text-xs"> {{ $lastmod }} </p>
-    <div class="toc hide-desktop">
-      {{ .TableOfContents }}
-    </div>
   </div>
   <article class="prose prose-invert prose-neutral text-white max-w-none">
     {{ .Content }}
@@ -21,8 +18,4 @@
 </div>
 </article>
 {{ end }}
-{{ define "footer" }}
-<div class="toc hide-mobile">
-  {{ .TableOfContents }}
-</div>
-{{ end }}
+{{ partial "toc.html" . }}

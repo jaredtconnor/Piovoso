@@ -6,7 +6,26 @@ module.exports = {
     "./content/**/*.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            'h5, h6': {
+              color: theme('colors.emerald.700'),
+              fontWeight: 'bold',
+              fontFamily: theme('fontFamily.serif')
+            },
+            'h1 strong': {
+              color: `${theme('colors.emerald.700')} !important`,
+            },
+            'a': {
+              color: theme('colors.white'),
+              fontWeight: 'bold',
+            }
+          },
+        },
+      }),
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
@@ -14,20 +33,4 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
   ]
-}
-
-typography: (theme) => {
-  return {
-    default: {
-      css: {
-        a: {
-          color: theme(`colors.blue.600`),
-          textDecoration: `none`,
-          "&:hover": {
-            textDecoration: `underline`,
-          },
-        },
-      },
-    },
-  }
 }
