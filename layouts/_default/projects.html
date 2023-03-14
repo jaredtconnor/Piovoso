@@ -1,22 +1,25 @@
 {{ define "main" }}
-	<h1 class="title"> {{ .Title }} </h1>  
-	<ul class="project-list">
-		{{ range (where .Site.RegularPages "Section" "project").ByDate.Reverse }} 
-			<li class="project-listing"> 
-				<article class="project">
-					<p>
-						<a class="project-title" href="{{ .Permalink }}">
-              {{ .Title }}
-						</a>
-                    </p>
-                    <p class="project-description">
-                        {{ .Description }}
-                    </p>
-            <p class="project-date"> 
-              {{ .Date.Format "January 2006" }} 
-            </p>				
-        </article>
-			</li>
-		{{ end }}
-	</ul>
+<div class="flex">
+  <h1 class="font-bold text-3xl mb-10"> {{
+    .Title }} </h1>
+</div>
+<ul class="flex flex-col">
+  {{ range (where .Site.RegularPages "Section" "project").ByDate.Reverse }}
+  <li class="my-3">
+    <article class="project">
+      <p>
+        <a class="font-bold transition hover:bg-sky-200 hover:text-slate-800" href="{{ .Permalink }}">
+          {{ .Title }}
+        </a>
+      </p>
+      <p class="font-light">
+        {{ .Description }}
+      </p>
+      <p class="text-xs">
+        {{ .Date.Format "January 2006" }}
+      </p>
+    </article>
+  </li>
+  {{ end }}
+</ul>
 {{ end }}

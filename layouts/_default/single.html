@@ -6,16 +6,14 @@
         }}</a></h1>
     <p class="my-2 text-xs"> {{ $lastmod }} </p>
   </div>
-  <article class="prose prose-quoteless">
+  <article class="prose prose-invert prose-neutral text-white max-w-none">
     {{ .Content }}
 </div>
-<div class="tags">
+<div class="block text-xs mt-10">
   <p> tags:
-    {{range .Params.tags}}
-    <a href="/tags/{{.}}">{{.}}</a>
+    {{range .Site.Taxonomies.tags}}
+    <a class="text-cyan-700/80 transition hover:bg-sky-200" href="{{.Page.Permalink}}">{{.Page.Title}}</a>
     {{end}}
   </p>
 </div>
-</article>
 {{ end }}
-{{ partial "toc.html" . }}

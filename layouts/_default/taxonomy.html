@@ -1,18 +1,24 @@
 {{ define "main" }}
-	<h1 class="label"><span style="color: #555; font-weight: 400">tag:</span> {{ .Title }} </h1>
-	<ul class="post-list">
-		{{ range .Paginator.Pages }}
-			<li class="post-listing">
-				<article class="article">
-					<p>
-						<a class="article-title" href="{{ .Permalink }}">
-							<span class="article-date"> {{ .Date.Format "Jan '06"}} </span>
-							{{ .Title }}
-						</a>
-					</a>
-				</article>
-			</li>
-		{{ end }}
-		{{ template "_internal/pagination.html" . }}
-	</ul>
+<div class="flex">
+  <h1 class="font-bold mb-4">tag: {{ .Title }} </h1>
+</div>
+<ul class="post-list ml-5">
+  {{ range .Paginator.Pages }}
+  <li class="">
+    <div class="block">
+      <div class="flex ">
+        <div class="flex transition hover:bg-sky-200 hover:text-slate-800">
+          <span class="text-xs text-center mt-1"> {{ .Date.Format
+            "Jan '06"}} </span>
+          <a class="ml-5" href="{{ .Permalink }}">
+            {{ .Title }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  {{ end }}
+</ul>
+{{ template "_internal/pagination.html" . }}
+
 {{ end }}
