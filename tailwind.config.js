@@ -10,18 +10,6 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            'h5, h6': {
-              color: theme('colors.emerald.700'),
-              fontWeight: 'bold',
-              fontFamily: theme('fontFamily.serif')
-            },
-            'h1 strong': {
-              color: `${theme('colors.emerald.700')} !important`,
-            },
-            'a': {
-              color: theme('colors.white'),
-              fontWeight: 'bold',
-            }
           },
         },
       }),
