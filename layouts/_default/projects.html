@@ -1,28 +1,30 @@
 {{ define "main" }}
-<div class="flex mb-10 font-bold text-3xl justify-center">
-  <div class="flex flex-col justify-center">
-    <h1><a class="font-bold text-3xl transition hover:bg-sky-200 hover:text-slate-800" href="{{ .Permalink }}">{{
-        .Title
-        }}</a></h1>
+<div class="flex flex-col px-20">
+  <div class="flex mb-10 font-bold text-3xl">
+    <div class="flex flex-col">
+      <h1><a class="font-bold text-3xl transition hover:bg-sky-200 hover:text-slate-800" href="{{ .Permalink }}">{{
+          .Title
+          }}</a></h1>
+    </div>
   </div>
+  <ul class="">
+    {{ range (where .Site.RegularPages "Section" "project").ByDate.Reverse }}
+    <li class="my-3">
+      <article class="project">
+        <p>
+          <a class="font-bold transition hover:bg-sky-200 hover:text-slate-800" href="{{ .Permalink }}">
+            {{ .Title }}
+          </a>
+        </p>
+        <p class="font-light">
+          {{ .Description }}
+        </p>
+        <p class="text-xs font-light">
+          {{ .Date.Format "January 2006" }}
+        </p>
+      </article>
+    </li>
+    {{ end }}
+  </ul>
 </div>
-<ul class="flex flex-col">
-  {{ range (where .Site.RegularPages "Section" "project").ByDate.Reverse }}
-  <li class="my-3">
-    <article class="project">
-      <p>
-        <a class="font-bold transition hover:bg-sky-200 hover:text-slate-800" href="{{ .Permalink }}">
-          {{ .Title }}
-        </a>
-      </p>
-      <p class="font-light">
-        {{ .Description }}
-      </p>
-      <p class="text-xs">
-        {{ .Date.Format "January 2006" }}
-      </p>
-    </article>
-  </li>
-  {{ end }}
-</ul>
 {{ end }}

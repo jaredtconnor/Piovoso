@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ $lastmod := .Lastmod.Format "Jan 2, 2006" }}
-<div class="">
+
+<div class="flex flex-col px-20">
   <div class="mb-10">
     <h1><a class="font-bold text-3xl transition hover:bg-sky-200 hover:text-slate-800" href="{{ .Permalink }}">{{ .Title
         }}</a></h1>
@@ -10,12 +11,13 @@
            prose-code:text-white prose-blockquote:text-white prose-strong:text-white prose:text-white prose-headings:text-white
      ">
     {{ .Content }}
-</div>
-<div class="block text-xs mt-10">
-  <p> tags:
-    {{range .Site.Taxonomies.tags}}
-    <a class="text-cyan-700/80 transition hover:bg-sky-200" href="{{.Page.Permalink}}">{{.Page.Title}}</a>
-    {{end}}
-  </p>
+  </article>
+  <div class="block text-xs mt-10">
+    <p> tags:
+      {{range .Site.Taxonomies.tags}}
+      <a class="text-cyan-700/80 transition hover:bg-sky-200" href="{{.Page.Permalink}}">{{.Page.Title}}</a>
+      {{end}}
+    </p>
+  </div>
 </div>
 {{ end }}
