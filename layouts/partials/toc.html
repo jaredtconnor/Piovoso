@@ -1,7 +1,6 @@
 {{ define "footer" }}
 <aside>
   <div class="text-sky-400 text-sm">
-    {{ .Page.TableOfContents | replaceRE "<ul>[[:space:]]*<li>[[:space:]]*<ul>" "<ul>" | safeHTML }}
   </div>
 </aside>
 {{ end }}
