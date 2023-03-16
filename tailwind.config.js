@@ -1,4 +1,8 @@
 module.exports = {
+  purge: [
+    'layouts/**/*.html',
+    'themes/piovoso/layouts/**/*.html'
+  ],
   content: [
     "./themes/**/layouts/**/*.html",
     "./content/**/layouts/**/*.html",

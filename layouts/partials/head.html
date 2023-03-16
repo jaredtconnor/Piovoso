@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{$syntaxCSS.Permalink}}">
 
   <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="icon" href="{{ $.Site.Params.favicon | absURL }}" />
+  <link rel="icon" href="{{ .Permalink }}" />
   {{ template "_internal/google_analytics.html" . }}
   {{ template "_internal/google_analytics_async.html" . }}
 
