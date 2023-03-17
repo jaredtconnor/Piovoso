@@ -1,21 +1,15 @@
 {{ define "main" }}
-<ul class="flex flex-col px-20">
+<ul class="">
   {{ range where .Site.RegularPages "Section" "blog"}}
-  <li class="">
-    <div class="block">
-      <div class="flex ">
-        <div class="flex transition hover:bg-sky-200 hover:text-slate-800">
-          <span class="text-xs text-center mt-1"> {{ .Date.Format
-            "Jan '06"}} </span>
-          <a class="ml-5" href="{{ .Permalink }}">
-            {{ .Title }}
-          </a>
-        </div>
-      </div>
+  <a class="flex flex-col space-y-1 mb-4 " href="{{ .Permalink }}">
+    <div class="flex flex-col w-full transition hover:bg-sky-200 hover:text-slate-800">
+      {{ .Title }}
     </div>
-  </li>
+    <span class="font-mono text-xs text-neutral-500 tracking-tighter"> {{ .Date.Format
+      "Jan '06"}} </span>
+  </a>
   {{ end }}
-  <div class="block text-xs mt-10">
+  <div class="text-xs mt-10">
     <p> tags:
       {{range .Site.Taxonomies.tags}}
       <a class="text-cyan-700/80 transition hover:bg-sky-200" href="{{.Page.Permalink}}">{{.Page.Title}}</a>
