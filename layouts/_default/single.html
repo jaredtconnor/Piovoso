@@ -5,7 +5,8 @@
   <div class="mb-10">
     <h1><a class="font-bold text-3xl transition hover:bg-sky-200 hover:text-slate-800" href="{{ .Permalink }}">{{ .Title
         }}</a></h1>
-    <p class="my-2 text-xs"> {{ $lastmod }} </p>
+    <span class="font-mono text-xs text-neutral-500 tracking-tighter"> {{ .Date.Format
+      "Jan - 2006"}} </span>
   </div>
   <article class="prose prose-invert prose-neutral text-white max-w-none prose-a:text-sky-400 transistion hover:prose-a:bg-sky-200 hover:prose-a:text-slate-800 prose-a:no-underline
            prose-code:text-white prose-blockquote:text-white prose-strong:text-white prose:text-white prose-headings:text-white
